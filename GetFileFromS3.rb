@@ -10,10 +10,10 @@ test = 5
 
 creds_file_name = 'creds.yaml'
 
-creds = YAML::load File::open(creds_file_name)
+creds = YAML.load_file(creds_file_name)
 
-access_key = creds['amazon']['access_key']
-secret_key = creds['amazon']['secret_key']
+access_key = creds['access_key']
+secret_key = creds['secret_key']
 
 AWS::S3::Base.establish_connection!(
     :access_key_id     => access_key,
